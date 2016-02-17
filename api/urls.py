@@ -1,7 +1,7 @@
 __author__ = 'jjh'
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from api import views
+import views
 admin.autodiscover()
 
 
@@ -23,7 +23,7 @@ Including another URLconf
 """
 
 urlpatterns = patterns('',
-                       url(r'^$', views.index, name='index'),
-                       url(r'^api/(?P<pk>[0-9]+)/$', views.DropDetail.as_view()),
+                       url(r'^$', 'user_list', name='user_list'),
+                       url(r'^api/(?P<pk>[0-9]+)/$', 'user_detail', name='user_detail'),
                        )
 
